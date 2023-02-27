@@ -53,3 +53,49 @@ let MusaScore = createJambScores(70,85,82,94)
 Musa.score = MusaScore
 
 //Different ways you can clone an object? Give examples for each of them.
+// METHOD 1: CLONE BY REMOVING IMMUTABILITY
+let myobject = {
+    p1: 10,
+    p2: 30,
+  };
+  let object2 = myobject;
+  myobject.p1 = 50;
+  console.log(object2.p1);
+
+  // METHOD 2: CLONE USING FOR LOOP
+  function copy(myObject) {
+    let objectCopy = {}; // objectCopy will store a copy of the mainObject
+    let key;
+    for (key in myObject) {
+      objectCopy[key] = myObject[key]; // copies each property to the objectCopy object
+    }
+    return objectCopy;
+  }
+  const myObject = {
+    a: 1,
+    b: 3,
+    c: {
+      x: 5,
+      y: 4,
+    },
+  }
+  console.log(copy(myObject));
+
+  // method 3: shallow copy
+
+  let obj = {
+    key1: "value1",
+    key2: "value2"
+  };
+  let clonedObject = { ...obj };
+  console.log(clonedObject);
+
+
+  // METHOD 4; OBJECT ASSIGN
+
+  let myobj = {
+    key1: "value1",
+    key2: "value2"
+  };
+  let myclonedObject = Object.assign({}, myobj);
+  console.log(myclonedObject);
