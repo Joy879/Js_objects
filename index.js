@@ -51,6 +51,7 @@ function createJambScores (eng, govt, lit, crk){
 let Musa = createPerson('Musa Dawodu', 19, 'Lekki, Lagos')
 let MusaScore = createJambScores(70,85,82,94)
 Musa.score = MusaScore
+console.log(Musa)
 
 //Different ways you can clone an object? Give examples for each of them.
 // METHOD 1: CLONE BY REMOVING IMMUTABILITY
@@ -84,8 +85,8 @@ let myobject = {
   // method 3: shallow copy
 
   let obj = {
-    key1: "value1",
-    key2: "value2"
+    name: "Joy",
+    year: 2023,
   };
   let clonedObject = { ...obj };
   console.log(clonedObject);
@@ -94,8 +95,27 @@ let myobject = {
   // METHOD 4; OBJECT ASSIGN
 
   let myobj = {
-    key1: "value1",
-    key2: "value2"
+    sch: "Stutern",
+    cohort: "fourteen"
   };
   let myclonedObject = Object.assign({}, myobj);
   console.log(myclonedObject);
+
+//  As Nigeria goes to the polls, here is an object representing some of the Presidential Candidates:
+
+const presidentialCandidates = {
+   AAC: 'Omoyele Sowore',
+   ACCORD: 'Christopher Imumolen',
+   APC: 'Bola Ahmed Tinubu',
+   LP: 'Peter Obi',
+   NNPP: 'Rabiu Kwankwaso',
+   PDP: 'Atiku Abubakar',
+}
+
+
+//Using any of the enumeration methods taught in class (for…in  or for..of), log out each of the presidential candidates in this format:
+	//’Omoyele Sowore is the presidential candidate of AAC’
+
+    for (const key in presidentialCandidates) {
+        console.log(`${presidentialCandidates[key]} is the presidential candidate of ${key}`)
+      }
